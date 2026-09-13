@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Cpu, Smartphone, Globe, ExternalLink, Mail, MessageCircle, X, Layers, ArrowUpRight, Menu, MapPin, Phone } from 'lucide-react';
-import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useTransform, useSpring, Variants } from 'framer-motion';
 
 // --- 3D Interactive Tilt Wrapper Component ---
 function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -50,13 +50,13 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Animation Variants
-  const fadeInUp = {
+  // Explicitly Typed Animation Variants (Fixes Vercel Build Error)
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
