@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Cpu, Smartphone, Globe, ExternalLink, Mail, MessageCircle, X, Layers, ArrowUpRight, Menu, MapPin, Phone } from 'lucide-react';
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
+
 // --- 3D Interactive Tilt Wrapper Component ---
 function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const x = useMotionValue(0);
@@ -36,7 +37,7 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
         rotateX,
         transformStyle: "preserve-3d",
       }}
-      className={`perspective-1000 ${className}`}
+      className={`[perspective:1000px] ${className}`}
     >
       <div style={{ transform: "translateZ(25px)" }}>
         {children}
@@ -210,7 +211,7 @@ export default function Home() {
           </motion.a>
           <motion.a 
             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-            href="https://www.linkedin.com/in/swen-akash/" target="_blank" rel="noreferrer" className="px-8 py-3.5 rounded-xl font-semibold border border-slate-800 hover:border-slate-700 bg-slate-900/50 hover:bg-slate-900 text-slate-300 flex items-center justify-center gap-2 transition-all"
+            href="https://www.linkedin.com/in/swen-akash/" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-xl font-semibold border border-slate-800 hover:border-slate-700 bg-slate-900/50 hover:bg-slate-900 text-slate-300 flex items-center justify-center gap-2 transition-all"
           >
             <svg className="w-4 h-4 text-red-400 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.47 1.47 0 1 0 0 2.94 1.47 1.47 0 0 0 0-2.94z" /></svg> LinkedIn Profile
           </motion.a>
@@ -323,7 +324,7 @@ export default function Home() {
                     <span className="bg-slate-950 px-3 py-1 rounded-md border border-slate-800">Next.js</span>
                     <span className="bg-slate-950 px-3 py-1 rounded-md border border-slate-800">PostgreSQL</span>
                   </div>
-                  <a href="#" className="text-xs text-red-400 hover:text-red-300 font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  <a href="#projects" className="text-xs text-red-400 hover:text-red-300 font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Preview <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
@@ -407,10 +408,10 @@ export default function Home() {
               Full Stack IoT & Mobile Developer crafting real-time tracking systems, custom embedded hardware, and high-performance web applications.
             </p>
             <div className="flex gap-3 pt-2">
-              <a href="https://github.com/swenakash" target="_blank" rel="noreferrer" className="p-2.5 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-red-400 rounded-lg border border-slate-800 transition-colors">
+              <a href="https://github.com/swenakash" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-red-400 rounded-lg border border-slate-800 transition-colors">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" /></svg>
               </a>
-              <a href="https://www.linkedin.com/in/swen-akash/" target="_blank" rel="noreferrer" className="p-2.5 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-red-400 rounded-lg border border-slate-800 transition-colors">
+              <a href="https://www.linkedin.com/in/swen-akash/" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-red-400 rounded-lg border border-slate-800 transition-colors">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.47 1.47 0 1 0 0 2.94 1.47 1.47 0 0 0 0-2.94z" /></svg>
               </a>
               <a href="mailto:swenakash@gmail.com" className="p-2.5 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-red-400 rounded-lg border border-slate-800 transition-colors">
@@ -455,7 +456,7 @@ export default function Home() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-red-500 shrink-0" />
-                <a href="https://wa.me/94788987132" target="_blank" rel="noreferrer" className="hover:text-red-400 transition-colors">+94 78 898 7132</a>
+                <a href="https://wa.me/94788987132" target="_blank" rel="noopener noreferrer" className="hover:text-red-400 transition-colors">+94 78 898 7132</a>
               </li>
             </ul>
           </div>
@@ -496,7 +497,7 @@ export default function Home() {
                 <motion.a
                   whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
                   href="https://wa.me/94788987132?text=Hi%20Swen,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"
-                  target="_blank" rel="noreferrer" onClick={() => setIsModalOpen(false)}
+                  target="_blank" rel="noopener noreferrer" onClick={() => setIsModalOpen(false)}
                   className="flex items-center gap-4 p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/20 transition group"
                 >
                   <div className="p-2.5 bg-emerald-500/20 rounded-lg text-emerald-400 group-hover:scale-110 transition-transform">
